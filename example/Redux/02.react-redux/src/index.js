@@ -1,17 +1,15 @@
-// import { addTodo } from './action'
-// import { createStore } from 'redux'
-// import todoApp from './reducer'
+import React from 'react'
+import { render } from 'react-dom'
+import { createStore } from 'redux'
+import { Provider } from 'react-redux'
+import App from './view/App'
+import reducer from './reducer'
 
-// // let store = createStore(todoApp)
-// // // 打印初始状态
-// // console.log('default store:',store.getState())
+const store = createStore(reducer)
 
-// // // 发起一系列 action
-// // store.dispatch(addTodo('Learn about actions'))
-// // console.log('update store:',store.getState())
-// // // 等价于
-// // store.dispatch({
-// //   type: 'ADD_TODO',
-// //   text: 'Learn about actions V2'
-// // });
-// // console.log('update store:',store.getState())
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+)
