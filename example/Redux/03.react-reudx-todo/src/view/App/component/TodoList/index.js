@@ -1,10 +1,16 @@
+/**
+ * todo列表组件
+ */
 import React from 'react'
 import PropTypes from 'prop-types'
 import Item from './Item'
 
 function TodoList(props) {
   const { list = [], onTodoClick } = props;
-  if (list.length === 0) return null;
+  if (list.length === 0) return (
+    <div>暂无记录</div>
+  );
+
   return (
     <ul>
       {
