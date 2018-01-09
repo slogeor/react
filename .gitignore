@@ -44,4 +44,3 @@ bundle/
 .vscode
 package-lock.json
 public/
-redux/
