@@ -1,16 +1,34 @@
 import React from 'react'
 import { render } from 'react-dom'
-// import { createStore } from 'redux'
-// import { Provider } from 'react-redux'
-import App from './view/App'
-// import reducer from './reducer'
+import { createStore, bindActionCreators } from 'redux'
+import { Provider, connect } from 'react-redux'
+import Todo from './view/Todo'
+import action from './action';
+import reducer from './reducer'
+const store = createStore(reducer);
 
-// const store = createStore(reducer)
-// <Provider store={store}>
-//  <App />
-// </Provider>,
+// Map Redux state to component props
+function mapStateToProps(state) {
+  console.log('state:', state)
+  return {
+    ...state.Todo,
+  }
+}
+
+// Map Redux actions to component props
+function mapDispatchToProps(dispatch) {
+  console.log('action:', action);
+  return  bindActionCreators(action.Todo, dispatch)
+}
+
+const TodoWrap = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Todo)
 
 render(
-  <App />,
-  document.getElementById('root')
+  <Provider store={store}>
+    <TodoWrap />
+  </Provider>,
+document.getElementById('root')
 )

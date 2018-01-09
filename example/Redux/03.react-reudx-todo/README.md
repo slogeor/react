@@ -1,0 +1,4 @@
+### TODO
+
+- bindActionCreators
+- redux-actions
