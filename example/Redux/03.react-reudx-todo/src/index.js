@@ -10,9 +10,7 @@ const store = createStore(reducer);
 // Map Redux state to component props
 function mapStateToProps(state) {
   console.log('state:', state)
-  return {
-    ...state.Todo,
-  }
+  return state.Todo;
 }
 
 // Map Redux actions to component props

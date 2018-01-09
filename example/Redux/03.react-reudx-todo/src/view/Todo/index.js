@@ -27,7 +27,6 @@ class App extends React.Component {
   // 筛选
   onFilterClick(type) {
     this.props.setVisibilityFilter(type);
-    // this.props.showFilterTodo(type);
   }
 
   render() {
