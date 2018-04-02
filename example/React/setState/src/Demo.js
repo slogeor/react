@@ -1,0 +1,71 @@
+import React from 'react';
+
+class Demo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      count: 2,
+    };
+
+    this.incrementMultiple = this.incrementMultiple.bind(this);
+    this.onPressClick = this.onPressClick.bind(this);
+    this.increment = this.increment.bind(this);
+  }
+
+  increment(state, props) {
+    console.log('increment:', state)
+    return { count: state.count + 1 };
+  }
+
+  incrementMultiple() {
+    // this.setState({count: this.state.count + 1});
+    // this.setState({count: this.state.count + 1});
+    // this.setState({count: this.state.count + 1});
+    this.setState(this.increment);
+    this.setState(this.increment);
+    // this.setState({count: this.state.count + 1});
+    this.setState(this.increment);
+  }
+
+  onPressClick() {
+    this.incrementMultiple();
+  }
+
+  componentWillMount() {
+    console.log("componentWillMount=", this.state.count)
+    // this.incrementMultiple();
+  }
+
+  componentDidMount() {
+    console.log("componentDidMount=", this.state.count)
+  }
+
+  componentWillReceiveProps(nextProps) {
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("shouldComponentUpdate=", this.state.count)
+    return true;
+  }
+
+  componentWillUpdate() {
+    console.log("componentWillUpdate=", this.state.count)
+  }
+
+  componentDidUpdate() {
+    console.log("componentDidUpdate=", this.state.count)
+  }
+
+  render () {
+    console.log("render=", this.state.count)
+    const { count } = this.state;
+    return (
+      <div>
+        <button onClick={this.onPressClick}>点我</button>
+        <span>count: {count}</span>
+      </div>
+    )
+  }
+}
+
+export default Demo;

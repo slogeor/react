@@ -1,5 +1,5 @@
 {
-  "name": "react-demo",
+  "name": "04.reudx-thunk",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -18,11 +18,10 @@
     "url": "https://github.com/slogeor/react/issues"
   },
   "dependencies": {
-    "cross-fetch": "^1.1.1",
     "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2",
-    "redux-logger": "^3.0.6"
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "react-scripts": "^1.0.17",
