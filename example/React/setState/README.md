@@ -3,9 +3,9 @@
 #### setState不会立刻改变React组件中state的值
 
 ```js
-  this.setState({count: this.state.count + 1});
-  this.setState({count: this.state.count + 1});
-  this.setState({count: this.state.count + 1});
+this.setState({count: this.state.count + 1});
+this.setState({count: this.state.count + 1});
+this.setState({count: this.state.count + 1});
 ```
 
 三次设置 `setState`，只有一个生效。
@@ -17,14 +17,14 @@
 #### 多次setState函数调用产生的效果会合并
 
 ```js
-  this.setState({FirstName: 'Morgan'});
-  this.setState({LastName: 'Cheng'});
+this.setState({FirstName: 'Morgan'});
+this.setState({LastName: 'Cheng'});
 ```
 
 等同于
 
 ```js
-  this.setState({FirstName: 'Morgan', LastName: 'Cheng'});
+this.setState({FirstName: 'Morgan', LastName: 'Cheng'});
 ```
 
 #### 函数式的setState用法
