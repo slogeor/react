@@ -40,11 +40,16 @@ class Demo extends React.Component {
     console.log("componentDidMount=", this.state.count)
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps, nextState) {
+    console.log("componentWillReceiveProps state=", this.state.count)
+    console.log("componentWillReceiveProps nextProps=", nextProps)
+    console.log("componentWillReceiveProps nextState=", nextState)
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponentUpdate=", this.state.count)
+    console.log("shouldComponentUpdate state=", this.state.count)
+    console.log("shouldComponentUpdate nextProps=", nextProps)
+    console.log("shouldComponentUpdate nextState=", nextState)
     return true;
   }
 

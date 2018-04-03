@@ -2,8 +2,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Demo from './Demo';
+import Sync from './Sync';
 
 ReactDOM.render(
-  <Demo />,
+  <Sync />,
   document.getElementById('root')
 )
