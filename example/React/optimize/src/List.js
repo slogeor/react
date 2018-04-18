@@ -12,7 +12,7 @@ class List extends React.Component {
     }
   }
   componentWillReceiveProps(nextProps) {
-    console.log('List nextProps:', nextProps)
+    console.log('componentWillReceiveProps List nextProps:', nextProps)
     if (!this.state.hasBeenVisible && nextProps.isVisible) {
       this.setState({ hasBeenVisible: true });
     }
